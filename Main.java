@@ -19,7 +19,7 @@ public class Main {
         displayZoneFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         DynamicSprite hero = new DynamicSprite(200,300,
-                ImageIO.read(new File("./img/heroTileSheetLowRes.png")),48,50);
+                ImageIO.read(new File(("./img/heroTileSheetLowRes.png"))),48,50);
 
         renderEngine = new RenderEngine();
         physicEngine = new PhysicEngine();
@@ -37,7 +37,7 @@ public class Main {
         displayZoneFrame.setVisible(true);
         displayZoneFrame.addKeyListener(gameEngine);
 
-        Playground playground = new Playground("./level.txt");
+        Playground playground = new Playground("./level/level1.txt");
         for (Displayable d : playground.getSpriteList()) {
             renderEngine.addToRenderList(d);
         }

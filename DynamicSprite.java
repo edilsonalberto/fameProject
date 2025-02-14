@@ -10,8 +10,10 @@ public class DynamicSprite extends SolidSprite {
     int timeBetweenFrame = 200;
     Direction direction;
 
+
     public DynamicSprite(double x, double y, Image image, double width, double height) {
         super(x, y, image, width, height);
+        this.direction = Direction.SOUTH;
     }
 
     public void setDirection(Direction direction) {

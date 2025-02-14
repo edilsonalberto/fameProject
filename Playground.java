@@ -15,6 +15,7 @@ public class Playground {
             final Image imageGrass = ImageIO.read(new File("./img/grass.png"));
             final Image imageRock = ImageIO.read(new File("./img/rock.png"));
             final Image imageTrap = ImageIO.read(new File("./img/trap.png"));
+
             final int imageTreeWidth = imageTree.getWidth(null);
             final int imageTreeHeight = imageTree.getHeight(null);
             final int imageGrassWidth = imageGrass.getWidth(null);
