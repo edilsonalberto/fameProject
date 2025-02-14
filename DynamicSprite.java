@@ -8,12 +8,11 @@ public class DynamicSprite extends SolidSprite {
     double speed = 5;
     final int spriteSheetNumberOfColumn = 10;
     int timeBetweenFrame = 200;
-    Direction direction;
+    Direction direction = Direction.SOUTH;
 
 
     public DynamicSprite(double x, double y, Image image, double width, double height) {
         super(x, y, image, width, height);
-        this.direction = Direction.SOUTH;
     }
 
     public void setDirection(Direction direction) {
@@ -85,7 +84,7 @@ public class DynamicSprite extends SolidSprite {
     }
     // Public method that moves the sprite if no collisions are detected.
     public void moveIfPossible(ArrayList<Sprite> environment) {
-        if (isMovingPossible(environment)) {
+        if (isWalking && isMovingPossible(environment)) {
             move();
         }
 
