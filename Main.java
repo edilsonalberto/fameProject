@@ -47,11 +47,12 @@ public class Main {
 
         renderEngine.addToRenderList(testSprite);
         renderEngine.addToRenderList(hero);
-
+        physicEngine.setEnvironment(playground.getSolidSpriteList());
         physicEngine.addToTheMovingList(hero);
+
         ArrayList<Sprite> environment = new ArrayList<>();
         environment.add(testSprite);
-        physicEngine.setEnvironment(environment);
+        
     }
 
     public static void main(String[] args) throws Exception {
