@@ -9,15 +9,38 @@ public class DynamicSprite extends SolidSprite {
     final int spriteSheetNumberOfColumn = 10;
     int timeBetweenFrame = 200;
     Direction direction = Direction.SOUTH;
-
+    // New: current state of the hero
+    // This will help know the current State
+    private state currentState;
 
     public DynamicSprite(double x, double y, Image image, double width, double height) {
         super(x, y, image, width, height);
+        // Initialize with an IdleState
+        // Initialize the sprite's state to idle at creation.
+        this.currentState = new IdleState(this);
     }
 
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
+    // Getter for direction (if needed in states)
+    public Direction getDirection() {
+        return this.direction;
+    }
+    // Methods to manage the state
+    public void setState(state newState) {
+        this.currentState = newState;
+    }
+    public state getState() {
+        return currentState;
+    }
+    // Optionally: methods to update internal properties based on state.
+    public void setWalking(boolean walking) {
+        this.isWalking = walking;
+    }
+
+
+
 
     @Override
     public void draw(Graphics g) {
@@ -88,6 +111,9 @@ public class DynamicSprite extends SolidSprite {
             move();
         }
 
+    }
+    public void updateState() {
+        currentState.handleRequest();
     }
 }
 

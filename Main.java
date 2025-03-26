@@ -52,7 +52,7 @@ public class Main {
 
         ArrayList<Sprite> environment = new ArrayList<>();
         environment.add(testSprite);
-        
+
     }
 
     public static void main(String[] args) throws Exception {
